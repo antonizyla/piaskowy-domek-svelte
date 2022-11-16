@@ -3,7 +3,7 @@ import { imagetools } from 'vite-imagetools';
 import type { UserConfig } from 'vite';
 
 const config: UserConfig = {
-	plugins: [imagetools(),sveltekit()]
+	plugins: [imagetools(), sveltekit()]
 };
 
 export default config;
