@@ -1,9 +1,9 @@
 <script lang="ts">
-    import image from '$lib/assets/Apartment_16.jpg?format=webp&width=2000';
-    import {hero} from '$lib/content/hero';
-    import Nav from '$lib/components/Nav.svelte';
-    import Button from '$lib/components/Button.svelte';
-    import EmailField from "$lib/components/EmailField.svelte";
+    import image from '../assets/Apartment_16.jpg';
+    import {hero} from '../content/hero';
+    import Nav from '../components/Nav.svelte';
+    import Button from '../components/Button.svelte';
+    import EmailField from "../components/EmailField.svelte";
     import TextAreaField from "../lib/components/TextAreaField.svelte";
 
     import {CookiesModalOpen} from "../stores/Overlays.js";

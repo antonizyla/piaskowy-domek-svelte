@@ -10,9 +10,11 @@ const config = {
 			postcss: true
 		})
 	],
-
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			$i18n: 'src/i18n',
+		},
 	}
 };
 

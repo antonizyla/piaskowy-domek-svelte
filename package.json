@@ -11,7 +11,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"typesafe-i18n": "typesafe-i18n"
 	},
 	"devDependencies": {
 		"@rodneylab/sveltekit-components": "^1.0.2",
@@ -46,5 +47,8 @@
 	"type": "module",
 	"peerDependencies": {
 		"leaflet": "^1.9.2"
+	},
+	"dependencies": {
+		"typesafe-i18n": "^5.16.3"
 	}
 }
