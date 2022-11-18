@@ -20,11 +20,25 @@ const en: BaseTranslation = {
                 label: 'Email',
                 placeholder: 'yourname@gmail.com',
                 validationText: 'Email is required',
+                required: "true"
             },
             message:{
                 label: 'Message',
                 placeholder: 'Your message ...',
-                validationText: 'Message is required',
+                validationText: 'Message of at least 20 chars is required',
+                required: "true"
+            },
+            name:{
+                label: 'Name',
+                placeholder: 'John Smith',
+                validationText: 'Name is required',
+                required: "true"
+            },
+            subject:{
+                label: 'Subject',
+                placeholder: 'Your subject ...',
+                validationText: 'Subject is required',
+                required: "true"
             }
         }
     },

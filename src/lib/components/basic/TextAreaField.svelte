@@ -2,19 +2,37 @@
     export let placeholder: string;
     export let id = "message";
     export let label: string;
-    export let required = true;
+    export let required;
     export let validationMessage = "* Required";
     export let autocomplete = false;
     export let name: string;
     export let rows = 7;
 
+    if (required === "") {
+        required = true;
+    } else {
+        required = required === "true";
+    }
+
     let message = "";
     let valid: boolean;
 
-    function validateMessage(message: string) {
-        if ((required && message.length > 20) || message.length === 0) {
+    // function validateMessage(message: string) {
+    //     if ((required && message.length > 20) || message.length === 0) {
+    //         valid = true;
+    //     } else valid = !(required && message.length < 21);
+    // }
+
+    function validateMessage(msg:string){
+        if (required) {
+            if (msg.length > 20 || msg.length === 0) {
+                valid = true;
+            } else {
+                valid = false;
+            }
+        }else{
             valid = true;
-        } else valid = !(required && message.length < 21);
+        }
     }
 
     $: validateMessage(message);

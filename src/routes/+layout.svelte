@@ -13,6 +13,6 @@
 </script>
 
 <main class="bg-blue-200">
-    <Nav class=""></Nav>
+    <Nav></Nav>
     <slot/>
 </main>

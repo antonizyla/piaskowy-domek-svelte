@@ -1,32 +1,35 @@
 <script lang="ts">
-    export let placeholder = "example@gmail.com";
+
+    export let placeholder = "Text Goes here ...";
     export let id = "email";
     export let label: string;
     export let required;
     export let validationMessage = "* Required";
     export let autocomplete = false;
     export let name: string;
+    export let minInputLength = 6;
 
     if (required === "") {
         required = true;
-    } else {
+    } else  {
         required = (required === "true");
     }
 
-    let email = "";
+    let input = "";
     let valid: boolean;
 
-    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    function validateEmail(email: string) {
+    function validateMessage(message: string) {
         if (required) {
-            valid = (emailRe.test(email) || email.length === 0);
-        }else{
+            valid = message.length > minInputLength - 1 || message.length === 0;
+        } else {
             valid = true;
         }
     }
 
-    $: validateEmail(email);
+    console.log(required)
+
+    $: validateMessage(input);
+
 </script>
 
 <div class="flex flex-col w-full p-2 ">
@@ -36,7 +39,7 @@
             <div class="form-warning">*</div>
         {/if}
     </div>
-    <input bind:value={email}
+    <input bind:value={input}
            class="p-3 border-blue-700 border-2 min-w-full"
            class:invalid-field={!valid}
            type="text"
