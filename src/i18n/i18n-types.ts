@@ -6,7 +6,6 @@ export type BaseTranslation = BaseTranslationType
 export type BaseLocale = 'en'
 
 export type Locales =
-	| 'de'
 	| 'en'
 	| 'pl'
 
@@ -15,10 +14,6 @@ export type Translation = RootTranslation
 export type Translations = RootTranslation
 
 type RootTranslation = {
-	/**
-	 * H​i​ ​P​l​e​a​s​e​ ​l​e​a​v​e​ ​a​ ​s​t​a​r​ ​i​f​ ​y​o​u​ ​l​i​k​e​ ​t​h​i​s​ ​p​r​o​j​e​c​t​:​ ​h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​i​v​a​n​h​o​f​e​r​/​t​y​p​e​s​a​f​e​-​i​1​8​n
-	 */
-	HI: string
 	nav: {
 		/**
 		 * P​i​a​s​k​o​w​y​ ​D​o​m​e​k​ ​Ł​e​b​a
@@ -56,14 +51,112 @@ type RootTranslation = {
 			 */
 			href: string
 		}
+		accessibility: {
+			/**
+			 * P​r​i​m​a​r​y
+			 */
+			arialabel: string
+			/**
+			 * P​r​i​m​a​r​y​ ​N​a​v​i​g​a​t​i​o​n
+			 */
+			id: string
+		}
+	}
+	footer: {
+		/**
+		 * P​i​a​s​k​o​w​y​ ​D​o​m​e​k​ ​Ł​e​b​a
+		 */
+		heading: string
+		links: {
+			'0': {
+				/**
+				 * G​a​l​l​e​r​y
+				 */
+				label: string
+				/**
+				 * /
+				 */
+				href: string
+			}
+			'1': {
+				/**
+				 * A​b​o​u​t
+				 */
+				label: string
+				/**
+				 * /
+				 */
+				href: string
+			}
+			'2': {
+				/**
+				 * C​o​n​t​a​c​t
+				 */
+				label: string
+				/**
+				 * /
+				 */
+				href: string
+			}
+		}
+		icons: {
+			'0': {
+				/**
+				 * b​o​o​k​i​n​g​.​c​o​m​/​h​o​t​e​l​/​p​l​/​p​i​a​s​k​o​w​y​-​d​o​m​e​k
+				 */
+				href: string
+				/**
+				 * b​o​o​k​i​n​g
+				 */
+				icon: string
+				/**
+				 * B​o​o​k​i​n​g​.​c​o​m​ ​l​i​n​k​ ​t​o​ ​b​o​o​k
+				 */
+				alt: string
+			}
+			'1': {
+				/**
+				 * T​r​i​p​a​d​v​i​s​o​r​.​c​o​m
+				 */
+				href: string
+				/**
+				 * t​r​i​p​a​d​v​i​s​o​r
+				 */
+				icon: string
+				/**
+				 * V​i​e​w​ ​T​r​i​p​a​d​v​i​s​o​r​ ​r​e​v​i​e​w​s
+				 */
+				alt: string
+			}
+			'2': {
+				/**
+				 * w​w​w​.​g​i​t​h​u​b​.​c​o​m​/​a​n​t​o​n​i​z​y​l​a​/​p​i​a​s​k​o​w​y​-​d​o​m​e​k​-​s​v​e​l​t​e
+				 */
+				href: string
+				/**
+				 * g​i​t​h​u​b
+				 */
+				icon: string
+				/**
+				 * g​i​t​h​u​b​ ​s​i​t​e​ ​r​e​p​o
+				 */
+				alt: string
+			}
+		}
+		acccessibility: {
+			/**
+			 * F​o​o​t​e​r
+			 */
+			arialabel: string
+			/**
+			 * F​o​o​t​e​r​ ​N​a​v​i​g​a​t​i​o​n
+			 */
+			id: string
+		}
 	}
 }
 
 export type TranslationFunctions = {
-	/**
-	 * Hi Please leave a star if you like this project: https://github.com/ivanhofer/typesafe-i18n
-	 */
-	HI: () => LocalizedString
 	nav: {
 		/**
 		 * Piaskowy Domek Łeba
@@ -100,6 +193,108 @@ export type TranslationFunctions = {
 			 * /
 			 */
 			href: () => LocalizedString
+		}
+		accessibility: {
+			/**
+			 * Primary
+			 */
+			arialabel: () => LocalizedString
+			/**
+			 * Primary Navigation
+			 */
+			id: () => LocalizedString
+		}
+	}
+	footer: {
+		/**
+		 * Piaskowy Domek Łeba
+		 */
+		heading: () => LocalizedString
+		links: {
+			'0': {
+				/**
+				 * Gallery
+				 */
+				label: () => LocalizedString
+				/**
+				 * /
+				 */
+				href: () => LocalizedString
+			}
+			'1': {
+				/**
+				 * About
+				 */
+				label: () => LocalizedString
+				/**
+				 * /
+				 */
+				href: () => LocalizedString
+			}
+			'2': {
+				/**
+				 * Contact
+				 */
+				label: () => LocalizedString
+				/**
+				 * /
+				 */
+				href: () => LocalizedString
+			}
+		}
+		icons: {
+			'0': {
+				/**
+				 * booking.com/hotel/pl/piaskowy-domek
+				 */
+				href: () => LocalizedString
+				/**
+				 * booking
+				 */
+				icon: () => LocalizedString
+				/**
+				 * Booking.com link to book
+				 */
+				alt: () => LocalizedString
+			}
+			'1': {
+				/**
+				 * Tripadvisor.com
+				 */
+				href: () => LocalizedString
+				/**
+				 * tripadvisor
+				 */
+				icon: () => LocalizedString
+				/**
+				 * View Tripadvisor reviews
+				 */
+				alt: () => LocalizedString
+			}
+			'2': {
+				/**
+				 * www.github.com/antonizyla/piaskowy-domek-svelte
+				 */
+				href: () => LocalizedString
+				/**
+				 * github
+				 */
+				icon: () => LocalizedString
+				/**
+				 * github site repo
+				 */
+				alt: () => LocalizedString
+			}
+		}
+		acccessibility: {
+			/**
+			 * Footer
+			 */
+			arialabel: () => LocalizedString
+			/**
+			 * Footer Navigation
+			 */
+			id: () => LocalizedString
 		}
 	}
 }

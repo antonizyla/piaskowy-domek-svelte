@@ -1,5 +1,4 @@
 <script lang="ts">
-    import {navbar} from '$lib/content/nav';
 
     import LL from '$i18n/i18n-svelte'
     import {unwrapArray} from '$lib/unwrapArray.ts'
@@ -12,24 +11,11 @@
 
     let windowWidth: number;
 
-    console.log($LL.nav.links[0])
-    //const arr = Array.from($LL.nav.links);
-    //console.log(arr);
-
-    let links = [];
-    let l2 = unwrapArray($LL.nav.links);
-
-
-    Object.keys($LL.nav.links).forEach((key) => {
-        links.push($LL.nav.links[key]);
-    });
-
-    console.log(links, l2);
 </script>
 
 <svelte:window bind:outerWidth={windowWidth}/>
 
-<div class="w-screen">
+<nav class="w-screen" aria-label="Main" id="Main">
     {#if windowWidth <= 1024}
         <!-- Mobile / tablet View -->
         {#if hamburgerOpen}
@@ -45,7 +31,7 @@
                     {/each}
                     <a class="p-2 " href={$LL.nav.cta.label()}>{$LL.nav.cta.label()}</a>
                 </div>
-                <div/>
+                <div></div> <!-- Empty div for flexbox alignment -->
             </div>
         {:else}
             <!-- Closed Hamburger Menu mobile view -->
@@ -59,21 +45,25 @@
         {/if}
     {:else}
         <!-- Desktop View -->
-        <div
-                class="flex flex-row justify-between py-5 m-auto px-28 items-center pt-8 text-lg"
-                style="max-width: 1600px;"
-        >
-            <h2>
-                <a class="text-xl font-bold text-gray-50 " href='/'
-                >{$LL.nav.heading()}</a
-                >
-            </h2>
-            <div>
-                {#each unwrapArray($LL.nav.links) as link}
-                    <a class="px-3 text-gray-50 " href={link.href}>{link.label}</a>
-                {/each}
-                <a class="pl-3 text-gray-50" href={$LL.nav.cta.href()}>{$LL.nav.cta.label()}</a>
+        <div class="px-28">
+            <div
+                    class="flex flex-row justify-between py-5 m-auto items-center pt-8 text-lg max-w-screen-xl"
+            >
+                <h2>
+                    <a class="text-xl font-bold text-gray-50 " href='/'
+                    >{$LL.nav.heading()}</a
+                    >
+                </h2>
+                <div>
+                    {#each unwrapArray($LL.nav.links) as link}
+                        <a class="px-3 text-gray-50 " href={link.href()}>{link.label()}</a>
+                    {/each}
+                    <a class="pl-3 text-gray-50" href={$LL.nav.cta.href()}>{$LL.nav.cta.label()}</a>
+                </div>
             </div>
         </div>
     {/if}
-</div>
+    <div class="px-6 lg:px-28 mx-auto">
+        <div class="max-w-screen-xl bg-red-800">hello</div>
+    </div>
+</nav>

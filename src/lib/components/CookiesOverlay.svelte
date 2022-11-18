@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Overlay from "./Overlay.svelte";
-    import Button from "./Button.svelte";
+    import Overlay from "./basic/Overlay.svelte";
+    import Button from "./basic/Button.svelte";
 
     import {cookiesAllowed} from "../../stores/Overlays";
     import {CookiesModalOpen} from "../../stores/Overlays";
