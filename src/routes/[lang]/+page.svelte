@@ -1,6 +1,7 @@
 <script lang="ts">
 
-    import background from "$lib/assets/Apartment_16.jpg?format=webp&width=1920";
+    //import background from "/static/Apartment_16.jpg?format=webp&width=1920";
+    import background from "$lib/assets/Apartment_16.jpg?format=webp&width=1920&brightness=0.8";
 
     import LL from '$i18n/i18n-svelte'
     import ContactForm from "$lib/components/ContactForm.svelte";
@@ -9,7 +10,7 @@
     import Container from "$lib/components/basic/Container.svelte";
 </script>
 
-<div class="wrapper " style="--image: url({background})">
+<div class="wrapper " style:background-image={`url(${background})`}>
     <div class="flex flex-col h-screen w-screen bg justify-between">
         <Nav></Nav>
         <Container>
@@ -28,17 +29,11 @@ text
 <ContactForm></ContactForm>
 
 <style lang="scss">
-  .wrapper::before {
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    background-image: var(--image);
+  .wrapper {
+    background-position: center center;
     background-size: cover;
-    background-position: center;
-    z-index: -2;
+    width: 100%;
+    min-height: 100vh;
   }
 
   @media (max-width: 1024px) {
