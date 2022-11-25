@@ -6,7 +6,7 @@
 	"scripts": {
 		"postbuild": "node --experimental-json-modules ./generate-sitemap.js",
 		"dev": "vite dev --host",
-		"build": "vite build && npm run postbuild",
+		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
