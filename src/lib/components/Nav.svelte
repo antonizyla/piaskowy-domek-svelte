@@ -10,10 +10,19 @@
     }
 
     let windowWidth: number;
+    let scrollY: number;
+
+    function stopScroll(scrollY): void{
+        if (hamburgerOpen){
+            window.scrollTo(0, 0);
+        }
+    }
+
+    $: stopScroll(scrollY);
 
 </script>
 
-<svelte:window bind:outerWidth={windowWidth}/>
+<svelte:window bind:outerWidth={windowWidth} bind:scrollY={scrollY}/>
 
 <nav class="w-screen" aria-label="Main" id="Main">
     {#if windowWidth <= 1024}
@@ -63,7 +72,4 @@
             </div>
         </div>
     {/if}
-    <div class="px-6 lg:px-28 mx-auto">
-        <div class="max-w-screen-xl bg-red-800">hello</div>
-    </div>
 </nav>

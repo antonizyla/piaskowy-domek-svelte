@@ -1,0 +1,17 @@
+.form-field{
+    @apply p-3 border-blue-600 border-2 min-w-full rounded-md shadow-sm;
+}
+.form-warning {
+    @apply text-red-400 text-sm text-center p-1
+}
+
+.invalid-field {
+    @apply border-red-400
+}
+.std-button {
+    @apply m-2 px-6 py-3 bg-blue-600 text-white font-medium leading-tight shadow-md hover:bg-blue-800 rounded-md hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-900 active:shadow-lg transition duration-150 ease-in-out
+}
+
+.inverted-button {
+    @apply m-2 px-6 py-3 border-2 border-blue-700 text-blue-700 font-medium leading-tight hover:bg-blue-900 rounded-md hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out
+}

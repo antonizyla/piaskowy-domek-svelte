@@ -40,7 +40,7 @@
         {/if}
     </div>
     <input bind:value={input}
-           class="p-3 border-blue-700 border-2 min-w-full"
+           class="form-field"
            class:invalid-field={!valid}
            type="text"
            name={name}

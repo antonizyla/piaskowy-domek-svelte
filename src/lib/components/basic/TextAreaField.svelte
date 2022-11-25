@@ -17,19 +17,9 @@
     let message = "";
     let valid: boolean;
 
-    // function validateMessage(message: string) {
-    //     if ((required && message.length > 20) || message.length === 0) {
-    //         valid = true;
-    //     } else valid = !(required && message.length < 21);
-    // }
-
     function validateMessage(msg:string){
         if (required) {
-            if (msg.length > 20 || msg.length === 0) {
-                valid = true;
-            } else {
-                valid = false;
-            }
+            valid = msg.length > 20 || msg.length === 0;
         }else{
             valid = true;
         }
@@ -48,7 +38,7 @@
     </div>
     <textarea
             bind:value={message}
-            class="border-blue-700 border-2 p-2 w-full"
+            class="form-field"
             class:invalid-field={!valid}
             rows={rows}
             placeholder={placeholder}

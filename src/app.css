@@ -18,10 +18,7 @@ a {
 	font-weight: 500;
 }
 
-.form-warning {
-    @apply text-red-400 text-sm text-center p-1
-}
-
-.invalid-field {
-    @apply border-red-400
+.stop-scrolling {
+	height: 100%;
+	overflow: hidden;
 }

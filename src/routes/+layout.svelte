@@ -6,13 +6,13 @@
     // at the very top, set the locale before you access the store and before the actual rendering takes place
     setLocale(data.locale)
 
-    import "../app.postcss"
+    import "../app.css"
+    import "$lib/components/basic/basic.css"
 
     import Nav from '$lib/components/Nav.svelte'
 
 </script>
 
-<main class="bg-blue-200">
-    <Nav></Nav>
+<main class="">
     <slot/>
 </main>
