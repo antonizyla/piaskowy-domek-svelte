@@ -1,13 +1,14 @@
 <script lang="ts">
 
-    //import background from "/static/Apartment_16.jpg?format=webp&width=1920";
     import background from "$lib/assets/Apartment_16.jpg?format=webp&width=1920&brightness=0.8";
 
-    import LL from '$i18n/i18n-svelte'
     import ContactForm from "$lib/components/ContactForm.svelte";
     import Nav from "$lib/components/Nav.svelte";
 
     import Container from "$lib/components/basic/Container.svelte";
+
+    import AccordionItem from "$lib/components/basic/AccordionItem.svelte";
+    import Accordion from "$lib/components/basic/Accordion.svelte";
 </script>
 
 <div class="wrapper " style:background-image={`url(${background})`}>
@@ -27,6 +28,8 @@
 </div>
 text
 <ContactForm></ContactForm>
+
+<Accordion></Accordion>
 
 <style lang="scss">
   .wrapper {

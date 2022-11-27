@@ -1,8 +1,8 @@
-import {expandBraceExpansion} from "fast-glob/out/utils/pattern";
-
 class Queue {
     public items: number[] = [];
+    public last_removed: number | undefined;
     public max_items = 0;
+    public mapRep = new Map();
 
     constructor(max_length: number) {
         this.max_items = max_length || 0;
@@ -13,12 +13,19 @@ class Queue {
             return false;
         } else if (this.maxLength === 0) {
             this.items.push(item);
+            this.mapRep.set(item, true);
         } else {
             if (this.length < this.maxLength) {
                 this.items.push(item);
+                this.mapRep.set(item ,true)
+                return false
             } else {
+                this.last_removed = this.items[0];
+                this.mapRep.delete(this.items[0]);
                 this.items.splice(0, 1);
                 this.items.push(item);
+                this.mapRep.set(item, true);
+                return true;
             }
         }
         return true;
@@ -28,6 +35,7 @@ class Queue {
         if (!this.isEmpty) {
             for (let i = 0; i < this.length; i++) {
                 if (this.items[i] === item) {
+                    this.mapRep.delete(this.items[i])
                     this.items.splice(i, 1);
                     return true;
                 }
@@ -36,9 +44,13 @@ class Queue {
         return false;
     }
 
+    contains(item: number): boolean {
+        return this.items.indexOf(item) !== -1;
+    }
+
     dequeue(): boolean {
         if (!this.isEmpty) {
-            this.items.splice(0, 1);
+            this.remove(this.peek());
         }
         return true
     }
