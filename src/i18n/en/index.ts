@@ -1,7 +1,6 @@
 import type {BaseTranslation} from '../i18n-types'
 
 const en: BaseTranslation = {
-    // TODO: translations go here
     nav: {
         heading: 'Piaskowy Domek Łeba',
         links: [
@@ -13,6 +12,15 @@ const en: BaseTranslation = {
             arialabel: 'Primary',
             id: 'Primary Navigation'
         }
+    },
+    accordion: {
+        accessibility: {a: "a"},
+        items: [
+            {id: "1", title: "Item 1", content: "Content 1", open: "true"},
+            {id: "2", title: "Item 2", content: "Content 2", open: "false"},
+            {id: "3", title: "Item 3", content: "Content 3", open: "false"},
+            {id: "4", title: "Item 4", content: "Content 4", open: "false"},
+        ],
     },
     contactForm: {
         fields: {
@@ -74,3 +82,4 @@ const en: BaseTranslation = {
 }
 
 export default en
+

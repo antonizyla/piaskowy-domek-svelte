@@ -26,8 +26,6 @@
         }
     }
 
-    console.log(required)
-
     $: validateMessage(input);
 
 </script>

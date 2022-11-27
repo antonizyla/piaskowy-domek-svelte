@@ -43,5 +43,5 @@
         >
         </TextAreaField>
     </div>
-    <Button inverted={true} rounded={true} type="submit">Submit Form</Button>
+    <Button inverted={true} rounded={true}>Submit Form</Button>
 </form>

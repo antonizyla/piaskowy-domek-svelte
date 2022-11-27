@@ -7,7 +7,6 @@ export type BaseLocale = 'en'
 
 export type Locales =
 	| 'en'
-	| 'pl'
 
 export type Translation = RootTranslation
 
@@ -60,6 +59,164 @@ type RootTranslation = {
 			 * P​r​i​m​a​r​y​ ​N​a​v​i​g​a​t​i​o​n
 			 */
 			id: string
+		}
+	}
+	accordion: {
+		accessibility: {
+			/**
+			 * a
+			 */
+			a: string
+		}
+		items: {
+			'0': {
+				/**
+				 * 1
+				 */
+				id: string
+				/**
+				 * I​t​e​m​ ​1
+				 */
+				title: string
+				/**
+				 * C​o​n​t​e​n​t​ ​1
+				 */
+				content: string
+				/**
+				 * t​r​u​e
+				 */
+				open: string
+			}
+			'1': {
+				/**
+				 * 2
+				 */
+				id: string
+				/**
+				 * I​t​e​m​ ​2
+				 */
+				title: string
+				/**
+				 * C​o​n​t​e​n​t​ ​2
+				 */
+				content: string
+				/**
+				 * f​a​l​s​e
+				 */
+				open: string
+			}
+			'2': {
+				/**
+				 * 3
+				 */
+				id: string
+				/**
+				 * I​t​e​m​ ​3
+				 */
+				title: string
+				/**
+				 * C​o​n​t​e​n​t​ ​3
+				 */
+				content: string
+				/**
+				 * f​a​l​s​e
+				 */
+				open: string
+			}
+			'3': {
+				/**
+				 * 4
+				 */
+				id: string
+				/**
+				 * I​t​e​m​ ​4
+				 */
+				title: string
+				/**
+				 * C​o​n​t​e​n​t​ ​4
+				 */
+				content: string
+				/**
+				 * f​a​l​s​e
+				 */
+				open: string
+			}
+		}
+	}
+	contactForm: {
+		fields: {
+			email: {
+				/**
+				 * E​m​a​i​l
+				 */
+				label: string
+				/**
+				 * y​o​u​r​n​a​m​e​@​g​m​a​i​l​.​c​o​m
+				 */
+				placeholder: string
+				/**
+				 * E​m​a​i​l​ ​i​s​ ​r​e​q​u​i​r​e​d
+				 */
+				validationText: string
+				/**
+				 * t​r​u​e
+				 */
+				required: string
+			}
+			message: {
+				/**
+				 * M​e​s​s​a​g​e
+				 */
+				label: string
+				/**
+				 * Y​o​u​r​ ​m​e​s​s​a​g​e​ ​.​.​.
+				 */
+				placeholder: string
+				/**
+				 * M​e​s​s​a​g​e​ ​o​f​ ​a​t​ ​l​e​a​s​t​ ​2​0​ ​c​h​a​r​s​ ​i​s​ ​r​e​q​u​i​r​e​d
+				 */
+				validationText: string
+				/**
+				 * t​r​u​e
+				 */
+				required: string
+			}
+			name: {
+				/**
+				 * N​a​m​e
+				 */
+				label: string
+				/**
+				 * J​o​h​n​ ​S​m​i​t​h
+				 */
+				placeholder: string
+				/**
+				 * N​a​m​e​ ​i​s​ ​r​e​q​u​i​r​e​d
+				 */
+				validationText: string
+				/**
+				 * t​r​u​e
+				 */
+				required: string
+			}
+			subject: {
+				/**
+				 * S​u​b​j​e​c​t
+				 */
+				label: string
+				/**
+				 * Y​o​u​r​ ​s​u​b​j​e​c​t​ ​.​.​.
+				 */
+				placeholder: string
+				/**
+				 * S​u​b​j​e​c​t​ ​i​s​ ​r​e​q​u​i​r​e​d
+				 */
+				validationText: string
+				/**
+				 * t​r​u​e
+				 */
+				required: string
+			}
 		}
 	}
 	footer: {
@@ -203,6 +360,164 @@ export type TranslationFunctions = {
 			 * Primary Navigation
 			 */
 			id: () => LocalizedString
+		}
+	}
+	accordion: {
+		accessibility: {
+			/**
+			 * a
+			 */
+			a: () => LocalizedString
+		}
+		items: {
+			'0': {
+				/**
+				 * 1
+				 */
+				id: () => LocalizedString
+				/**
+				 * Item 1
+				 */
+				title: () => LocalizedString
+				/**
+				 * Content 1
+				 */
+				content: () => LocalizedString
+				/**
+				 * true
+				 */
+				open: () => LocalizedString
+			}
+			'1': {
+				/**
+				 * 2
+				 */
+				id: () => LocalizedString
+				/**
+				 * Item 2
+				 */
+				title: () => LocalizedString
+				/**
+				 * Content 2
+				 */
+				content: () => LocalizedString
+				/**
+				 * false
+				 */
+				open: () => LocalizedString
+			}
+			'2': {
+				/**
+				 * 3
+				 */
+				id: () => LocalizedString
+				/**
+				 * Item 3
+				 */
+				title: () => LocalizedString
+				/**
+				 * Content 3
+				 */
+				content: () => LocalizedString
+				/**
+				 * false
+				 */
+				open: () => LocalizedString
+			}
+			'3': {
+				/**
+				 * 4
+				 */
+				id: () => LocalizedString
+				/**
+				 * Item 4
+				 */
+				title: () => LocalizedString
+				/**
+				 * Content 4
+				 */
+				content: () => LocalizedString
+				/**
+				 * false
+				 */
+				open: () => LocalizedString
+			}
+		}
+	}
+	contactForm: {
+		fields: {
+			email: {
+				/**
+				 * Email
+				 */
+				label: () => LocalizedString
+				/**
+				 * yourname@gmail.com
+				 */
+				placeholder: () => LocalizedString
+				/**
+				 * Email is required
+				 */
+				validationText: () => LocalizedString
+				/**
+				 * true
+				 */
+				required: () => LocalizedString
+			}
+			message: {
+				/**
+				 * Message
+				 */
+				label: () => LocalizedString
+				/**
+				 * Your message ...
+				 */
+				placeholder: () => LocalizedString
+				/**
+				 * Message of at least 20 chars is required
+				 */
+				validationText: () => LocalizedString
+				/**
+				 * true
+				 */
+				required: () => LocalizedString
+			}
+			name: {
+				/**
+				 * Name
+				 */
+				label: () => LocalizedString
+				/**
+				 * John Smith
+				 */
+				placeholder: () => LocalizedString
+				/**
+				 * Name is required
+				 */
+				validationText: () => LocalizedString
+				/**
+				 * true
+				 */
+				required: () => LocalizedString
+			}
+			subject: {
+				/**
+				 * Subject
+				 */
+				label: () => LocalizedString
+				/**
+				 * Your subject ...
+				 */
+				placeholder: () => LocalizedString
+				/**
+				 * Subject is required
+				 */
+				validationText: () => LocalizedString
+				/**
+				 * true
+				 */
+				required: () => LocalizedString
+			}
 		}
 	}
 	footer: {

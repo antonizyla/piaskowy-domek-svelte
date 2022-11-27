@@ -1,19 +1,26 @@
 <script lang="ts">
+    import LL from '$i18n/i18n-svelte'
+    import {unwrapArray} from '$lib/unwrapArray.ts'
+
     import AccordionItem from "./AccordionItem.svelte";
     import {Queue} from "../../queue";
 
-    export let maxOpen = 3; // set to 0 for no limit
+    export let maxOpen = 2; // set to 0 for no limit
 
     let openItems = new Queue(maxOpen);
 
-    let accordionItems = [
-        {id: 1, title: "Item 1", content: "Content 1", open: true},
-        {id: 2, title: "Item 2", content: "Content 2", open: false},
-        {id: 3, title: "Item 3", content: "Content 3", open: false},
-        {id: 4, title: "Item 4", content: "Content 4", open: false},
-        {id: 5, title: "Item 5", content: "Content 5", open: false},
-
-    ]
+    // desired keys are id, title, content, open
+    let clean = [];
+    let a = unwrapArray($LL.accordion.items)
+    a.forEach((item) => {
+        let tmp = {};
+        Object.assign(tmp, {id: Number(item.id())})
+        Object.assign(tmp, {title: item.title()})
+        Object.assign(tmp, {content: item.content()})
+        Object.assign(tmp, {open: item.open() === "true"})
+        clean.push(tmp)
+    });
+    let accordionItems = clean;
 
     // set all initially open components into the queue
     // assuming that no. of preset open boxes is less than limit
@@ -27,14 +34,14 @@
 
     initialize();
 
-    function updateQueue() : void {
+    function updateQueue(): void {
         // check for any differences between table and queue
         // put differences into queue
         // if an item is dequeued close in table
         if (maxOpen === 0) return;
         for (let i = 0; i < accordionItems.length; i++) {
             const currId = Number(accordionItems[i].id);
-            const currOpen = Number(accordionItems[i].open);
+            const currOpen = Number((accordionItems[i].open));
             // if the table is closed but open in queue -> close in queue
             if (openItems.mapRep.has(currId) && !currOpen) {
                 openItems.remove(currId);
@@ -59,14 +66,19 @@
     $: {
         accordionItems;
         updateQueue(); // run update Queue when accordionItems Changes
+        console.log(accordionItems)
     }
 
 </script>
 
-{#each accordionItems as item}
-    <AccordionItem
-            title={item.title}
-            content={item.content}
-            bind:open={item.open}
-    />
-{/each}
+<div class="divide-y divide-gray-600 divide-2">
+    {#each accordionItems as item}
+        <div class="first:mt-2 mx-2 last:mb-2 ">
+            <AccordionItem
+                    title={item.title}
+                    content={item.content}
+                    bind:open={item.open}
+            />
+        </div>
+    {/each}
+</div>

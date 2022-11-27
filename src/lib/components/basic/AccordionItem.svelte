@@ -1,4 +1,5 @@
 <script lang="ts">
+
     export let title: string;
     export let content: string;
 
@@ -8,19 +9,29 @@
         open = !open;
     }
 
-   //$: console.log(open)
+    import IoIosArrowDown from 'svelte-icons/io/IoIosArrowDown.svelte'
+    import IoIosArrowUp from 'svelte-icons/io/IoIosArrowUp.svelte'
+
+    import {fade} from "svelte/transition";
+
 </script>
 
-<div class="m-2">
-    <div class="p-2 flex flex-row justify-between">
+<div class="">
+    <button on:click={()=>toggle_closed()} class="p-3 w-full flex flex-row justify-between">
         <div class="">{title}</div>
-        {#if (open)}
-            <button on:click={() => toggle_closed()}>Toggle {title}</button>
-        {:else}
-            <button on:click={() => toggle_closed()}>Toggle (Closed) {title}</button>
-        {/if}
-    </div>
+        <div class="h-[32px] w-[32px] text-gray-800">
+            {#if (open)}
+                <div in:fade={{duration: 500}}>
+                    <IoIosArrowUp></IoIosArrowUp>
+                </div>
+            {:else}
+                <div in:fade={{duration: 500}}>
+                    <IoIosArrowDown></IoIosArrowDown>
+                </div>
+            {/if}
+        </div>
+    </button>
     {#if (open)}
-        <div class="">{content}</div>
+        <div class="p-3 px-4 ">{content}</div>
     {/if}
 </div>
