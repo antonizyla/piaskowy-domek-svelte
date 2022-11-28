@@ -9,6 +9,9 @@
 
     let openItems = new Queue(maxOpen);
 
+    // Accordion Data type :
+    // []{id: number, title: string, content: string, open:boolean}
+
     // desired keys are id, title, content, open
     let clean = [];
     let a = unwrapArray($LL.accordion.items)
@@ -66,7 +69,6 @@
     $: {
         accordionItems;
         updateQueue(); // run update Queue when accordionItems Changes
-        console.log(accordionItems)
     }
 
 </script>

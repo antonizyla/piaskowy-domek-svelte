@@ -1,5 +1,7 @@
 <script lang="ts">
 
+    import LocaleSelector from "./basic/LocaleSelector.svelte";
+
     import LL from '$i18n/i18n-svelte'
     import {unwrapArray} from '$lib/unwrapArray.ts'
 
@@ -12,8 +14,8 @@
     let windowWidth: number;
     let scrollY: number;
 
-    function stopScroll(scrollY): void{
-        if (hamburgerOpen){
+    function stopScroll(scrollY): void {
+        if (hamburgerOpen) {
             window.scrollTo(0, 0);
         }
     }
@@ -35,6 +37,9 @@
                     <button on:click={toggle_open}>Toggle</button>
                 </div>
                 <div class="flex flex-col justify-center p-5">
+                    <div class="p-2 text-lg">
+                        <LocaleSelector></LocaleSelector>
+                    </div>
                     {#each unwrapArray($LL.nav.links) as link}
                         <a class="p-2" href={link.href()}>{link.label()}</a>
                     {/each}
@@ -63,7 +68,8 @@
                     >{$LL.nav.heading()}</a
                     >
                 </h2>
-                <div>
+                <div class="flex text-gray-50 ">
+                    <LocaleSelector></LocaleSelector>
                     {#each unwrapArray($LL.nav.links) as link}
                         <a class="px-3 text-gray-50 " href={link.href()}>{link.label()}</a>
                     {/each}
