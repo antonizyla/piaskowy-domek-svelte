@@ -5,13 +5,25 @@ const en: BaseTranslation = {
         heading: 'Piaskowy Domek Łeba',
         links: [
             {label: 'Gallery', href: '/'},
-            {label: 'About', href: '/'}
+            {label: 'About', href: '/'},
+            {label: 'FAQ', href: '/'},
+            {label: 'Rooms', href: '/'}
         ],
         cta: {label: 'Contact', href: '/'},
         accessibility: {
             arialabel: 'Primary',
             id: 'Primary Navigation'
         }
+    },
+    splash: {
+        mainHeading: "Piaskowy Domek Łeba",
+        subtext: "blah blah blah blah description .....",
+        cta: "Find out More"
+    },
+    privacy: {
+        heading: "How we use data",
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet beatae consectetur, delectus dolore eaque earum magnam minus nihil officia placeat possimus quaerat quod rem sunt tenetur voluptatem. Maiores.",
+        changeButton: "Change Cookie Settings"
     },
     accordion: {
         accessibility: {a: "a"},
@@ -30,19 +42,19 @@ const en: BaseTranslation = {
                 validationText: 'Email is required',
                 required: "true"
             },
-            message:{
+            message: {
                 label: 'Message',
                 placeholder: 'Your message ...',
                 validationText: 'Message of at least 20 chars is required',
                 required: "true"
             },
-            name:{
+            name: {
                 label: 'Name',
                 placeholder: 'John Smith',
                 validationText: 'Name is required',
                 required: "true"
             },
-            subject:{
+            subject: {
                 label: 'Subject',
                 placeholder: 'Your subject ...',
                 validationText: 'Subject is required',

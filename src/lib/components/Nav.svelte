@@ -1,5 +1,9 @@
 <script lang="ts">
 
+    import Button from "$lib/components/basic/Button.svelte";
+
+    export let lightText = true;
+
     import LocaleSelector from "./basic/LocaleSelector.svelte";
 
     import LL from '$i18n/i18n-svelte'
@@ -51,7 +55,7 @@
             <!-- Closed Hamburger Menu mobile view -->
             <div class="flex flex-row justify-between p-6 text-xl">
                 <h2>
-                    <a class="text-gray-50 font-semibold" href='/'>{$LL.nav.heading()}</a
+                    <a class="font-semibold" class:text-gray-50={lightText} href='/'>{$LL.nav.heading()}</a
                     >
                 </h2>
                 <button on:click={toggle_open}>Toggle</button>
@@ -64,16 +68,16 @@
                     class="flex flex-row justify-between py-5 m-auto items-center pt-8 text-lg max-w-screen-xl"
             >
                 <h2>
-                    <a class="text-xl font-bold text-gray-50 " href='/'
+                    <a class="text-xl font-bold" class:text-gray-50={lightText} href='/'
                     >{$LL.nav.heading()}</a
                     >
                 </h2>
-                <div class="flex text-gray-50 ">
+                <div class="flex" class:text-gray-50={lightText}>
                     <LocaleSelector></LocaleSelector>
                     {#each unwrapArray($LL.nav.links) as link}
-                        <a class="px-3 text-gray-50 " href={link.href()}>{link.label()}</a>
+                        <a class="px-3 " class:text-gray-50={lightText} href={link.href()}>{link.label()}</a>
                     {/each}
-                    <a class="pl-3 text-gray-50" href={$LL.nav.cta.href()}>{$LL.nav.cta.label()}</a>
+                    <a class="pl-3" class:text-gray-50={lightText} href={$LL.nav.cta.href()}>{$LL.nav.cta.label()}</a>
                 </div>
             </div>
         </div>

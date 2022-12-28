@@ -1,18 +1,28 @@
 import type {Translation} from '../i18n-types'
+import en from '../en'
 
 const pl: Translation = {
+    ...en as Translation,
     nav: {
         heading: 'Piaskowy Domek Łeba',
         links: [
-            {label: 'Gallery', href: '/'},
-            {label: 'About', href: '/'}
+            {label: 'Galeria', href: '/'},
+            {label: 'O Nas', href: '/'},
+            {label: 'FAQ', href: '/'},
+            {label: 'Pokoje', href: '/'}
         ],
-        cta: {label: 'Contact', href: '/'},
+        cta: {label: 'Kontakt', href: '/'},
         accessibility: {
             arialabel: 'Primary',
             id: 'Primary Navigation'
         }
     },
+    splash: {
+        mainHeading: "Piaskowy Domek Łeba" ,
+        subtext: "blah blah blah blah description ..... in polish",
+        cta: "Find out More in polish"
+    },
+
     accordion: {
         accessibility: {a: "a"},
         items: [

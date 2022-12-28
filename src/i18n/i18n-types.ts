@@ -40,6 +40,26 @@ type RootTranslation = {
 				 */
 				href: string
 			}
+			'2': {
+				/**
+				 * F​A​Q
+				 */
+				label: string
+				/**
+				 * /
+				 */
+				href: string
+			}
+			'3': {
+				/**
+				 * R​o​o​m​s
+				 */
+				label: string
+				/**
+				 * /
+				 */
+				href: string
+			}
 		}
 		cta: {
 			/**
@@ -61,6 +81,34 @@ type RootTranslation = {
 			 */
 			id: string
 		}
+	}
+	splash: {
+		/**
+		 * P​i​a​s​k​o​w​y​ ​D​o​m​e​k​ ​Ł​e​b​a
+		 */
+		mainHeading: string
+		/**
+		 * b​l​a​h​ ​b​l​a​h​ ​b​l​a​h​ ​b​l​a​h​ ​d​e​s​c​r​i​p​t​i​o​n​ ​.​.​.​.​.
+		 */
+		subtext: string
+		/**
+		 * F​i​n​d​ ​o​u​t​ ​M​o​r​e
+		 */
+		cta: string
+	}
+	privacy: {
+		/**
+		 * H​o​w​ ​w​e​ ​u​s​e​ ​d​a​t​a
+		 */
+		heading: string
+		/**
+		 * L​o​r​e​m​ ​i​p​s​u​m​ ​d​o​l​o​r​ ​s​i​t​ ​a​m​e​t​,​ ​c​o​n​s​e​c​t​e​t​u​r​ ​a​d​i​p​i​s​i​c​i​n​g​ ​e​l​i​t​.​ ​A​b​ ​a​l​i​q​u​a​m​ ​a​m​e​t​ ​b​e​a​t​a​e​ ​c​o​n​s​e​c​t​e​t​u​r​,​ ​d​e​l​e​c​t​u​s​ ​d​o​l​o​r​e​ ​e​a​q​u​e​ ​e​a​r​u​m​ ​m​a​g​n​a​m​ ​m​i​n​u​s​ ​n​i​h​i​l​ ​o​f​f​i​c​i​a​ ​p​l​a​c​e​a​t​ ​p​o​s​s​i​m​u​s​ ​q​u​a​e​r​a​t​ ​q​u​o​d​ ​r​e​m​ ​s​u​n​t​ ​t​e​n​e​t​u​r​ ​v​o​l​u​p​t​a​t​e​m​.​ ​M​a​i​o​r​e​s​.
+		 */
+		paragraph: string
+		/**
+		 * C​h​a​n​g​e​ ​C​o​o​k​i​e​ ​S​e​t​t​i​n​g​s
+		 */
+		changeButton: string
 	}
 	accordion: {
 		accessibility: {
@@ -341,6 +389,26 @@ export type TranslationFunctions = {
 				 */
 				href: () => LocalizedString
 			}
+			'2': {
+				/**
+				 * FAQ
+				 */
+				label: () => LocalizedString
+				/**
+				 * /
+				 */
+				href: () => LocalizedString
+			}
+			'3': {
+				/**
+				 * Rooms
+				 */
+				label: () => LocalizedString
+				/**
+				 * /
+				 */
+				href: () => LocalizedString
+			}
 		}
 		cta: {
 			/**
@@ -362,6 +430,34 @@ export type TranslationFunctions = {
 			 */
 			id: () => LocalizedString
 		}
+	}
+	splash: {
+		/**
+		 * Piaskowy Domek Łeba
+		 */
+		mainHeading: () => LocalizedString
+		/**
+		 * blah blah blah blah description .....
+		 */
+		subtext: () => LocalizedString
+		/**
+		 * Find out More
+		 */
+		cta: () => LocalizedString
+	}
+	privacy: {
+		/**
+		 * How we use data
+		 */
+		heading: () => LocalizedString
+		/**
+		 * Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet beatae consectetur, delectus dolore eaque earum magnam minus nihil officia placeat possimus quaerat quod rem sunt tenetur voluptatem. Maiores.
+		 */
+		paragraph: () => LocalizedString
+		/**
+		 * Change Cookie Settings
+		 */
+		changeButton: () => LocalizedString
 	}
 	accordion: {
 		accessibility: {

@@ -1,4 +1,6 @@
 <script lang="ts">
+    import type {PageData, ActionData} from './$types';
+
     import LL from '$i18n/i18n-svelte'
 
     import EmailField from "./basic/EmailField.svelte";
@@ -6,9 +8,12 @@
     import TextInput from "$lib/components/basic/TextInput.svelte";
     import Button from "$lib/components/basic/Button.svelte";
 
+    export let data: PageData;
+    export let form: ActionData;
+
 </script>
 
-<form action="" class="max-w-[600px] p-12 border-2 border-blue-700">
+<form action="?/contact" method="POST" class="max-w-[600px] p-12 border-2 border-blue-700">
     <div class="mb-1">
         <TextInput
                 placeholder={$LL.contactForm.fields.name.placeholder()}
