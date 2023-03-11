@@ -1,13 +1,16 @@
 <script lang="ts">
 
-    import Button from "$lib/components/basic/Button.svelte";
+    import {fade} from "svelte/transition";
+
+    import MdDehaze from 'svelte-icons/md/MdDehaze.svelte'
+    import MdClose from 'svelte-icons/md/MdClose.svelte'
 
     export let lightText = true;
 
     import LocaleSelector from "./basic/LocaleSelector.svelte";
 
     import LL from '$i18n/i18n-svelte'
-    import {unwrapArray} from '$lib/unwrapArray.ts'
+    import {unwrapArray} from '$lib/unwrapArray'
 
     let hamburgerOpen = false;
 
@@ -18,7 +21,7 @@
     let windowWidth: number;
     let scrollY: number;
 
-    function stopScroll(scrollY): void {
+    function stopScroll(scrollY: number): void {
         if (hamburgerOpen) {
             window.scrollTo(0, 0);
         }
@@ -38,7 +41,11 @@
             <div class="flex flex-col justify-between h-screen w-screen self-center bg-slate-300 text-lg">
                 <div class="flex flex-row justify-between p-6">
                     <h2><a class="text-xl" href="/">{$LL.nav.heading()}</a></h2>
-                    <button on:click={toggle_open}>Toggle</button>
+                    <button on:click={toggle_open} in:fade >
+                        <div class="h-[32px]">
+                            <MdClose></MdClose>
+                        </div>
+                    </button>
                 </div>
                 <div class="flex flex-col justify-center p-5">
                     <div class="p-2 text-lg">
@@ -58,7 +65,11 @@
                     <a class="font-semibold" class:text-gray-50={lightText} href='/'>{$LL.nav.heading()}</a
                     >
                 </h2>
-                <button on:click={toggle_open}>Toggle</button>
+                <button on:click={toggle_open} in:fade>
+                    <div class="h-[32px] text-white">
+                        <MdDehaze></MdDehaze>
+                    </div>
+                </button>
             </div>
         {/if}
     {:else}
