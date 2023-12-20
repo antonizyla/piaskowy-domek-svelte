@@ -41,7 +41,7 @@
             <div class="flex flex-col justify-between h-screen w-screen self-center bg-slate-300 text-lg">
                 <div class="flex flex-row justify-between p-6">
                     <h2><a class="text-xl" href="/">{$LL.nav.heading()}</a></h2>
-                    <button on:click={toggle_open} in:fade >
+                    <button on:click={toggle_open} in:fade|global >
                         <div class="h-[32px]">
                             <MdClose></MdClose>
                         </div>
@@ -65,7 +65,7 @@
                     <a class="font-semibold" class:text-gray-50={lightText} href='/'>{$LL.nav.heading()}</a
                     >
                 </h2>
-                <button on:click={toggle_open} in:fade>
+                <button on:click={toggle_open} in:fade|global>
                     <div class="h-[32px] text-white">
                         <MdDehaze></MdDehaze>
                     </div>
